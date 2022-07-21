@@ -1,0 +1,71 @@
+body {
+    font-size: 18px;
+}
+
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.bg-introducao {
+    background-image: url("./images/bg-hero-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: hsl(193, 100%, 96%);
+    padding-bottom: 80px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0px 80px 0px;
+}
+
+.botao {
+    padding: 15px 90px;
+    border-radius: 40px;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(56, 56, 56, 0.25);
+    max-width: max-content;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.introducao-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 40px;
+}
+
+.introducao-conteudo-texto {
+    margin-bottom: 40px;
+}
+
+.introducao-conteudo-texto h1{
+    color: hsl(192, 100%, 9%);
+    margin-bottom: 25px;
+    font-size: 2.8rem;
+}
+.introducao-conteudo-texto p {
+    color: hsl(192, 100%, 9%);
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+
+.botao2 {
+    padding: 18px 80px;
+    border-radius: 40px;
+    background: hsl(322, 100%, 66%);
+    box-shadow: 0px 2px 6px rgba(56, 56, 56, 0.25);
+    max-width: max-content;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: inline-block;
+}

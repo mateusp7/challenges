@@ -1,0 +1,94 @@
+.footer-bg {
+    background: hsl(192, 100%, 9%);
+}
+
+.footer {
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 3fr;
+    gap: 40px;
+    padding-top: 200px;
+    padding-bottom: 60px;
+}
+
+.primeira-ul li {
+    margin-top: 40px;
+    font-size: 1rem;
+    margin-left: 35px;
+}
+
+.primeira-ul {
+    position: relative;
+    color: #bcbcbc;
+}
+
+.segunda-ul li {
+    margin-top: 20px;
+    font-size: 1rem;
+    margin-left: 35px;
+}
+
+.segunda-ul {
+    color: #bcbcbc;
+}
+
+.terceira-ul li {
+    margin-top: 20px;
+    font-size: 1rem;
+    margin-left: 35px;
+}
+
+.terceira-ul {
+    color: #bcbcbc;
+}
+
+.primeira-ul::before {
+    content: url("../images/icon-location.svg");
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 2px;
+}
+
+.telefone {
+    position: relative;
+}
+.telefone::before {
+    content: url("../images/icon-phone.svg");
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: -40px;
+}
+
+
+.email {
+    position: relative;
+}
+.email::before {
+    content: url("../images/icon-email.svg");
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: -40px;
+    top: 3px;
+}
+
+.segunda-ul, .terceira-ul, .lista-redes {
+    margin-top: 80px;
+}
+
+.lista-redes {
+    display: flex;
+    align-self: start;
+    gap: 10px;
+}
+
+.footer p {
+    grid-column: 4 / 6;
+    font-size: 1rem;
+    color: #bcbcbc;
+}
