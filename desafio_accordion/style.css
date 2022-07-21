@@ -1,0 +1,134 @@
+body {
+    margin: 0px;
+    background-image: linear-gradient(to right, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p, dt, dl, dd, ul, li {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    padding: 60px 60px 60px 0px;
+}
+
+.container-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    gap: 10px;
+}
+
+.container-conteudo img {
+    position: absolute;
+    width: 50%;
+    left: -50px;
+    top: 10px;
+}
+
+.container-textos {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.container-textos h1 {
+    margin-bottom: 25px;
+}
+
+.container-textos dt {
+    color: hsl(237, 12%, 33%);
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+.container-textos dd {
+    color: hsl(240, 6%, 50%);
+    font-weight: 400;
+}
+
+.faq-lista div::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: hsl(240, 5%, 91%);
+}
+
+.faq-lista dt {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.faq-lista dt:hover {
+    color: hsl(14, 88%, 65%);
+    transition: 0.5s;
+}
+
+.faq-lista dt::after {
+    content: url("./images/icon-arrow-down.svg");
+    position: absolute;
+    left: 98%;
+    display: inline-block;
+}
+
+.faq-lista dt.ativo::after {
+    content: url("./images/icon-arrow-up.svg");
+    transition: 0.5s;
+}
+
+.js-accordion dd {
+    display: none;
+}
+
+.js-accordion dt.ativo {
+    color: #000000;
+}
+
+.js-accordion dd.ativo {
+    display: block;
+    animation: slideDown .5s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
