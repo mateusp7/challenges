@@ -1,0 +1,166 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px 40px 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.itens-esquerdo, .navegacao, .acesso {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.navegacao a, .acesso a {
+    color: hsl(0, 0%, 41%);
+    font-size: 1.1rem;
+}
+
+.navegacao a:hover {
+    color: hsl(0, 0%, 8%);
+    transition: .3s;
+}
+
+[data-dropdown] {
+    position: relative;
+}
+
+.acesso a:nth-child(2) {
+    padding: 15px 20px;
+    border: 2px solid hsl(0, 0%, 41%);
+    border-radius: 20px;
+}
+
+.acesso a:nth-child(2):hover {
+    border: 2px solid hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 8%);
+    transition: .3s;
+}
+
+.acesso a:nth-child(1):hover {
+    color: hsl(0, 0%, 8%);
+    transition: .3s;
+}
+
+[data-dropdown]{
+    position: relative;
+}
+
+.dropdown-menu-features, .dropdown-menu-company {
+    position: absolute;
+    background: white;
+    box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    top: 20px;
+    z-index: 999;
+}
+
+.dropdown-menu-features li {
+    position: relative;
+}
+
+.dropdown-menu-features li:nth-child(1)::before {
+    content: url("./images/icon-todo.svg");
+    position: absolute;
+    left: -12px;
+    top: -1.2px;
+}
+
+.dropdown-menu-features li:nth-child(2)::before {
+    content: url("./images/icon-calendar.svg");
+    position: absolute;
+    left: -12px;
+    top: -1.2px;
+}
+
+.dropdown-menu-features li:nth-child(3)::before {
+    content: url("./images/icon-reminders.svg");
+    position: absolute;
+    left: -12px;
+    top: -1.2px;
+}
+
+.dropdown-menu-features li:nth-child(4)::before {
+    content: url("./images/icon-planning.svg");
+    position: absolute;
+    left: -12px;
+    top: -1.2px;
+}
+
+.dropdown-menu-features {
+    right: 0;
+    padding: 25px 30px 20px 40px;
+}
+
+.dropdown-menu-company {
+    left: 0;
+    padding: 25px 30px 20px 30px;
+}
+
+.dropdown-menu-features a, .dropdown-menu-company a {
+    font-size: 1rem;
+}
+
+.dropdown-menu-features a{
+    margin-left: 10px;
+}
+
+.dropdown-menu-features li + li, .dropdown-menu-company li + li {
+    margin-top: 20px;
+}
+
+[data-dropdown] .dropdown-menu-features, [data-dropdown] .dropdown-menu-company{
+    display: none;
+}
+
+[data-dropdown]:hover .dropdown-menu-features,
+[data-dropdown].active .dropdown-menu-features {
+    display: block;
+    animation: slideDown .3s forwards;
+}
+
+[data-dropdown]:hover .dropdown-menu-company,
+[data-dropdown].active .dropdown-menu-company {
+    display: block;
+    animation: slideDown .3s forwards;
+}
+
+[data-dropdown]::after {
+    content: url("./images/icon-arrow-down.svg");
+    margin-left: 7px;
+    position: absolute;
+    top: -2px;
+}
+
+[data-dropdown]:hover:after{
+    animation: rotate .3s forwards;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+
+
+
+
+

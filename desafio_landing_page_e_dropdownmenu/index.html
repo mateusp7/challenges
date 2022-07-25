@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+    <title>DropDown menu - FrontEnd Mentor</title>
+</head>
+<body>
+    <header class="header container-menu">
+        <div class="itens-esquerdo">
+            <div>
+                <img src="images/logo.svg">
+            </div>
+            <nav>
+                <ul class="navegacao">
+                    <li data-dropdown>
+                        <a href="#">Features</a>
+                        <ul class="dropdown-menu-features">
+                            <li><a href="todolist.html">Todo List</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="reminders.html">Reminders</a></li>
+                            <li><a href="planning.html">Planning</a></li>
+                        </ul>
+                    </li>
+                    <li data-dropdown>
+                        <a href="#">Company</a>
+                        <ul class="dropdown-menu-company">
+                            <li><a href="history.html">History</a></li>
+                            <li><a href="ourteam.html">Our Team</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="acesso">
+            <a href="#" data-modal="login">Login</a>
+            <a href="#" data-modal="register">Register</a>
+        </div>
+    </header>
+    <main class="conteudo-container container">
+        <div class="conteudo">
+            <div class="conteudo-texto">
+                <h1>Make<br>remote work</h1>
+                <p>Get your team in sync, no matter your location.<br>Streamline processes, create team rituals, and <br>watch productivy soar.</p>
+                <a href="#">Learn more</a>
+                <div class="patrocinadores">
+                    <img src="images/client-databiz.svg">
+                    <img src="images/client-audiophile.svg">
+                    <img src="images/client-meet.svg">
+                    <img src="images/client-maker.svg">
+                </div>
+            </div>
+            <div class="image-hero">
+                <img src="images/image-hero-desktop.png" alt="Imagem Hero">
+            </div>
+        </div>
+    </main>
+
+    <section class="modal-container" data-modal="container">
+        <div class="modal">
+            <button data-modal="fechar" class="fechar">X</button>
+            <form action="">
+                <label for="email">Email</label>
+                <input type="text" form="email" id="email">
+
+                <label for="senha">Senha</label>
+                <input type="password" form="senha" id="senha">
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="modal-container-registro" data-modal="containerRegistro">
+        <div class="modal-registro">
+            <button data-modal="fecharRegistro" class="fechar-registro">X</button>
+            <form action="">
+                <label for="nomeRegistro">Nome</label>
+                <input type="text" form="nomeRegistro" id="nomeRegistro">
+
+                <label for="emailRegister">E-mail</label>
+                <input type="text" form="emailRegister" id="emailRegister">
+
+                <label for="senhaRegister">Senha</label>
+                <input type="password" form="senhaRegister" id="senhaRegister">
+
+                <label for="senhaRegisterConfirm">Confirmar Senha</label>
+                <input type="password" form="senhaRegisterConfirm" id="senhaRegisterConfirm">
+
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

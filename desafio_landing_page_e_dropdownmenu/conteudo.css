@@ -1,0 +1,38 @@
+.conteudo {
+    display: grid;
+    grid-template-columns: 700px 1fr;
+}
+
+.conteudo-texto {
+    align-self: center;
+}
+
+.conteudo-texto h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 60px;
+    color: hsl(0, 0%, 8%);
+}
+
+.conteudo-texto p{
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: hsl(0, 0%, 41%);
+    margin-bottom: 60px;
+}
+
+.conteudo-texto a {
+    padding: 20px 30px;
+    background: hsl(0, 0%, 8%);
+    box-sizing: border-box;
+    display: inline-block;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+
+.patrocinadores {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
