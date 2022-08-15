@@ -1,0 +1,45 @@
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: hsl(193, 38%, 86%); 
+    margin-top: 100px;
+}
+.attribution a { 
+    color: hsl(0, 0%, 100%); 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Manrope', sans-serif;
+    background: hsl(218, 23%, 16%);
+    color: hsl(193, 38%, 86%); 
+}
+  
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}

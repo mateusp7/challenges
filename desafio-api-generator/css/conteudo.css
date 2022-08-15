@@ -1,0 +1,52 @@
+.container-conteudo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    margin: 0 auto;
+    background: hsl(217, 19%, 24%);
+    width: 500px;
+    margin-top: 200px;
+    padding: 40px 5px 60px 5px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container-conteudo span {
+    color: hsl(150, 100%, 66%);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.container-conteudo p {
+    max-width: 35ch;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 30px;
+}
+
+.container-conteudo .icon-dice {
+    position: absolute;
+    bottom: -30px;
+    padding: 20px;
+    background: hsl(150, 100%, 66%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container-conteudo .icon-dice:hover {
+    box-shadow: 0px 0px 20px 10px rgba(82, 255, 168, 0.25);
+    transition: .3s;
+    animation: rotate .3s forwards;
+}
+
+@keyframes rotate {
+    to {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
