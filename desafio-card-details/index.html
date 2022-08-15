@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="imports.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Challenge Card - FrontEnd mentor</title>
+</head>
+<body>
+  <div class="container">
+    <div class="conteudo">
+      <img src="images/bg-main-desktop.png">
+
+      <figure class="card-front">
+        <img src="images/bg-card-front.png">
+        <figcaption class="nomeCartao">JANE APPLESEED</figcaption>
+        <figcaption class="numeroCartao">0000 0000 0000 0000</figcaption>
+        <figcaption class="mes">00</figcaption>
+        <figcaption class="ano">00</figcaption>
+      </figure>
+
+      <figure class="card-back">
+        <img src="images/bg-card-back.png">
+        <figcaption class="cvcCartao">000</figcaption>
+      </figure>
+
+      <form class="formulario">
+        <label for="nomeCartao">CARDHOLDER NAME</label>
+        <input type="text" name="nomeCartao" id="nomeCartao" placeholder="e.g. Jane Appleseed">
+
+        <label for="numeroCartao">CARD NUMBER</label>
+        <input type="text" name="numeroCartao" id="numeroCartao" placeholder="1234 5678 9123 0000" maxlength="19" minlength="19">
+        <div class="dados-confidenciais">
+          <div>
+            <label for="mes">EXP. DATE (MM/YY)</label>
+            <input type="text" name="mes" id="mes" placeholder="MM" maxlength="2">
+            <input type="text" name="ano" id="ano" placeholder="YY" maxlength="2">
+          </div>
+          <div>
+            <label for="cvcCartao" class="cvc">CVC</label>
+            <input type="text" name="cvcCartao" id="cvcCartao" placeholder="e.g. 123" maxlength="3">
+          </div>
+        </div>
+        <input type="button" name="button" id="button" value="Confirm">
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+}
+
+form {
+    margin-bottom: 150px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: hsl(278, 68%, 11%);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+input {
+    margin-bottom: 20px;
+    padding: 14px 14px 14px 12px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid hsl(270, 3%, 87%);
+    border-radius: 8px;
+}
+
+::-webkit-input-placeholder {
+    color: hsl(0, 0%, 74%);
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    
+}
+
+input[type="button"] {
+    background: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#mes, #ano {
+    max-width: 70px;
+}
+
+.dados-confidenciais {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bg-main {
+    position: relative;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 400px;
+}
+
+.card-front {
+    top: 120px;
+    left: 140px;
+    border-radius: 10px;
+}
+
+.card-front::before {
+    content: "";
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    background: hsl(0, 0%, 100%);
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.card-front::after {
+    content: "";
+    width: 20px;
+    border-radius: 50%;
+    height: 20px;
+    border: 1px solid hsl(0, 0%, 100%);
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 90px;
+}
+
+.card-front figcaption.nomeCartao {
+    position: absolute;
+    top: 80%;
+    left: 30px;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.card-front figcaption.numeroCartao {
+    position: absolute;
+    top: 60%;
+    left: 30px;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 4px;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+.card-front figcaption.mes {
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.card-front figcaption.ano {
+    position: absolute;
+    top: 80%;
+    left: 86%;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.card-back {
+    bottom: 80px;
+    left: 240px;
+    border-radius: 10px;
+}
+
+.card-back figcaption.cvcCartao {
+    position: absolute;
+    top: 44%;
+    left: 79%;
+    color: hsl(0, 0%, 100%);
+}
+
