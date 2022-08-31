@@ -1,0 +1,119 @@
+.cart-container {
+    position: relative;
+}
+
+.cart-quantidade-container{
+    display: none;
+    position: absolute;
+    background-color: hsl(26, 100%, 55%);
+    width: 18px;
+    height: 14px;
+    z-index: 1;
+    top: -6px;
+    left: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: hsl(0, 0%, 100%);
+}
+
+[data-quantidade="container"].ativo {
+    display: block;
+}
+
+.cart-conteudo-produto {
+    display: none;
+    position: absolute;
+    width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 5px 10px 1px rgba($color: #000000, $alpha: 0.1);
+    top: 55px;
+    right: -120px;
+    border-radius: 10px;
+}
+
+[data-container].ativo {
+    display: block;
+}
+
+.cart-conteudo-produto h3::after {
+    content: "";
+    background: hsl(220, 14%, 75%);
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin-top: 20px;
+}
+
+.cart-descricoes {
+    margin-top: 40px;
+}
+
+.cart-descricoes img {
+    float: left;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.textos {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 30px 20px 30px;
+    align-items: center;
+}
+
+.texto-descricao-produto {
+    grid-row: 1;
+    grid-column: 1 / 2;
+}
+
+.texto-descricao-preco {
+    grid-row: 3;
+    margin-bottom: 25px;
+}
+
+.icon-lixeira {
+    grid-column: 2;
+    grid-row: 1 / -1;
+}
+
+[data-produto="cart-empty"], [data-produto="botao"], [data-produto="cart-descricoes"] {
+    display: none;
+}
+
+[data-produto="cart-empty"].ativo {
+    display: block;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-weight: 700;
+    color: hsl(219, 9%, 45%);
+}
+
+[data-produto="botao"].ativo, [data-produto="cart-descricoes"].ativo {
+    display: block;
+}
+
+[data-produto="botao"].ativo {
+    border: none;
+    box-sizing: border-box;
+    padding: 18px 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    color: #ffffff;
+    background: hsl(26, 100%, 55%);
+    font-size: 1rem;
+    font-weight: 700;
+    gap: 10px;
+    width: 100%;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+[data-produto="botao"].ativo:hover {
+    filter: opacity(40%);
+    transition: .3s;
+}

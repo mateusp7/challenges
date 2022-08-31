@@ -1,0 +1,78 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegacao, .navegacao-menu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.navegacao-menu a {
+    font-weight: 400;
+    color: hsl(219, 9%, 45%);
+    position: relative;
+}
+
+.navegacao-menu a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: hsl(26, 100%, 55%);
+    width: 0;
+    height: 4px;
+    bottom: -55px;
+    opacity: 0;
+    scale: 0;
+}
+
+.navegacao-menu a:hover::after {
+    width: 100%;
+    transition: .4s;
+    opacity: 1;
+    scale: 1;
+}
+
+.navegacao-menu a:hover {
+    color: hsl(220, 13%, 13%);
+    transition: .3s;
+}
+
+.cart-icon:hover svg path {
+    fill: hsl(220, 13%, 13%);
+    transition: .3s;
+}
+
+.navegacao-opcoes {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navegacao-opcoes img {
+    cursor: pointer;
+}
+
+.header {
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.profile-menu {
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.profile-menu:hover {
+    border-color: hsl(26, 100%, 55%);
+    transition: .3s;
+}
+
+.cart-icon {
+    cursor: pointer;
+}
+
+
+
+

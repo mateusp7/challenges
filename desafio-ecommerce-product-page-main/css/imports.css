@@ -1,0 +1,12 @@
+@import "./resets.css";
+
+/* Header Imports */
+@import "./header/header.css";
+@import "./headerJs/headerJs.css";
+
+/* Conteudo */
+@import "./conteudo/conteudo.css";
+@import "./galeria-imagens-conteudo/galeriaImagens.css";
+
+/* Componentes */
+@import "./componentes/componentes.css";
