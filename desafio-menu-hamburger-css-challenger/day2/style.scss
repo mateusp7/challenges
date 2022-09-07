@@ -1,0 +1,145 @@
+.container-botao {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 400px;
+    background: #3FAF82;
+    height: 400px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    position: relative;
+}
+
+.traco {
+    position: absolute;
+    width: 60px;
+}
+
+.traco-main::before, .traco-main::after,
+.traco-split::before {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.traco-main::before {
+    transform: translateY(-14px);
+}
+
+.traco-main::after {
+    transform: translateY(14px);
+}
+
+.traco.ativo {
+    &.traco-main::before {
+        animation: move-line-1 0.8s forwards;
+    }
+    &.traco-main::after {
+        animation: move-line-2 0.8s forwards;
+    }
+    &.traco-split::before {
+        animation: sumir .3s ease-in-out forwards 0.1s;
+    }
+}
+
+.traco.fechado {
+    &.traco-main::before {
+        animation: girarZedoDeg2 .6s ease-in-out forwards, descerNormal .6s ease-in-out forwards 0.4s;
+    }
+    &.traco-main::after {
+        animation: girarZedoDeg .6s ease-in-out forwards, subirNormal .6s ease-in-out forwards 0.4s;
+    }
+    &.traco-split::before {
+        animation: aparecer .900s ease-in forwards;
+    }
+}
+
+@keyframes move-line-1 {
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes girarZedoDeg {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes subirNormal {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(14px);
+    }
+}
+
+@keyframes girarZedoDeg2 {
+    0% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes descerNormal {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-14px);
+    }
+}
+
+@keyframes move-line-2 {
+    80% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes sumir {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+        width: 0%;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        width: 60px;
+    }
+}
