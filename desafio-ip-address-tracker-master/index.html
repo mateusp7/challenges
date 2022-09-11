@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="imports.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header-bg">
+    <div class="header-content">
+      <h1>IP Address Tracker</h1>
+      <form class="formulario">
+        <input type="text" name="ipAdress" id="ipAddress" placeholder="Search for any IP address or domain">
+        <button type="submit" class="arrow-img">
+          <img src="images/icon-arrow.svg">
+        </button >
+      </form>
+    </div>
+  </header>
+  <div class="informationaddress">
+    <div class="information-content">
+      <h3>IP ADDRESS</h3>
+      <h1 data-ip="address">192.212.174.101</h1>
+    </div>
+
+    <div class="information-content">
+      <h3>LOCATION</h3>
+      <h1 data-ip="location">Brooklyn, NY <br>10001</h1>
+    </div>
+
+    <div class="information-content">
+      <h3>TIMEZONE</h3>
+      <h1 data-ip="timezone">UTC -05:00</h1>
+    </div>
+
+    <div class="information-content">
+      <h3>ISP</h3>
+      <h1 data-ip="isp">SpaceX <br>Starlink</h1>
+    </div>
+  </div>
+
+  <div id="map">
+
+  </div>
+
+
+
+
+
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Mateus Paulo da Silva</a>.
+  </div> -->
+</body>
+</html>
