@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./imports.css">
+  <script src="script.js" defer></script>
+  <script src="theme2.js" defer></script>
+  <script src="theme3.js" defer></script>
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body class="theme1">
+  <div class="calculator-content">
+    <div class="calculator-title theme1">
+      <h3>calc</h3>
+      <div class="calculator-theme theme1">
+        <h4>THEME</h4>
+        <div class="calculator-theme-box theme1"></div>
+      </div>
+    </div>
+    <div class="calculator-box-result theme1">
+      <h1 data-calculator="result">0</h1>
+    </div>
+
+    <div class="calculator-box-numbers theme1">
+        <button class="button" data-number>7</button>
+        <button class="button" data-number>8</button>
+        <button class="button" data-number>9</button>
+        <button data-operation="delete" class="del-button">DEL</button>
+
+        <button class="button" data-number>4</button>
+        <button class="button" data-number>5</button>
+        <button class="button" data-number>6</button>
+        <button class="button" data-operation="add">+</button>
+
+        <button class="button" data-number>1</button>
+        <button class="button" data-number>2</button>
+        <button class="button" data-number>3</button>
+        <button class="button" data-operation="subtract">-</button>
+
+        <button class="button" data-operation="decimal">.</button>
+        <button class="button" data-number>0</button>
+        <button class="button" data-operation="divide">/</button>
+        <button class="button" data-operation="multiply">x</button>
+
+        <button class="reset-button" data-operation="reset">RESET</button>
+        <button class="result-button" data-operation="equal">=</button>
+    </div>
+  </div>
+</body>
+</html>

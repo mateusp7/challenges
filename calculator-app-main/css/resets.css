@@ -1,0 +1,50 @@
+body.theme1 {
+  background: hsl(222, 26%, 31%);
+}
+
+body.theme2 {
+  background: hsl(0, 0%, 90%);
+}
+
+body.theme3 {
+  background: hsl(268, 75%, 9%);
+}
+
+body {
+    margin: 0px;
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  p {
+    margin: 0px;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
