@@ -87,6 +87,11 @@
   left: 4px;
 }
 
+.calculator-theme-box.theme1:before {
+  -webkit-animation: moverTheme1 0.3s linear forwards;
+          animation: moverTheme1 0.3s linear forwards;
+}
+
 .calculator-theme-box.theme2:before {
   -webkit-animation: moverTheme2 0.3s linear forwards;
           animation: moverTheme2 0.3s linear forwards;
@@ -97,6 +102,29 @@
           animation: moverTheme3 0.3s linear forwards;
 }
 
+@-webkit-keyframes moverTheme1 {
+  from {
+    left: 32px;
+  }
+  50% {
+    left: 18px;
+  }
+  100% {
+    left: 4px;
+  }
+}
+
+@keyframes moverTheme1 {
+  from {
+    left: 32px;
+  }
+  50% {
+    left: 18px;
+  }
+  100% {
+    left: 4px;
+  }
+}
 @-webkit-keyframes moverTheme2 {
   from {
     left: 4px;
@@ -108,7 +136,6 @@
     left: 18px;
   }
 }
-
 @keyframes moverTheme2 {
   from {
     left: 4px;

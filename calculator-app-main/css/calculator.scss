@@ -88,6 +88,12 @@
     }
 }
 
+.calculator-theme-box.theme1 {
+    &:before {
+        animation: moverTheme1 0.3s linear forwards;
+    }
+}
+
 .calculator-theme-box.theme2 {
     &:before {
         animation: moverTheme2 0.3s linear forwards;
@@ -97,6 +103,18 @@
 .calculator-theme-box.theme3 {
     &:before {
         animation: moverTheme3 0.3s linear forwards;
+    }
+}
+
+@keyframes moverTheme1 {
+    from {
+        left: 32px;
+    }
+    50% {
+        left: 18px;
+    }
+    100% {
+        left: 4px;
     }
 }
 
