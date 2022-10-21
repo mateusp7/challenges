@@ -9,9 +9,13 @@ conseguimos executar algum desafio, isso que dizer que estamos aprendendo o que 
 <h2>Projetos</h2>
 <p>Abaixo deixarei algumas imagens dos projetos que executei e que estão disponíveis nesse repostório</p>
 <div style="display:flex; align-items: center;"> 
-  <img style="max-width: 100%" src="https://imgur.com/fiwfomm.jpg"/>
-  <img style="max-width: 100%" src="https://imgur.com/XfFxVWn.jpg"/>
-  <img style="max-width: 100%" src="https://imgur.com/SZ3qneQ.jpg"/>
-  <img style="max-width: 100%" src="https://imgur.com/YBvH4XZ.jpg"/>
-  <img style="max-width: 100%" src="https://imgur.com/Y9NNslI.jpg"/>
+  <img src="https://imgur.com/fiwfomm.jpg"/>
+  <img src="https://imgur.com/XfFxVWn.jpg"/>
+  <img src="https://imgur.com/SZ3qneQ.jpg"/>
+  <img src="https://imgur.com/YBvH4XZ.jpg"/>
+  <img src="https://imgur.com/Y9NNslI.jpg"/>
+  <img src="https://imgur.com/uxu572M.jpg"/>
 </div>
+
+<h2>Aviso</h2>
+<p>Alguns projetos funcionam melhor usando o live server. Algumas vezes, ao abrir o projeto pelo index.html, ele não reconhece algumas pastas.</p>
