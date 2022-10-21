@@ -15,7 +15,7 @@ conseguimos executar algum desafio, isso que dizer que estamos aprendendo o que 
   <img width=35% src="https://imgur.com/fiwfomm.jpg"/>
   <img width=35% src="https://imgur.com/XfFxVWn.jpg"/>
   <img width=35% src="https://imgur.com/SZ3qneQ.jpg"/>
-  <img width=35% src="https://imgur.com/YBvH4XZ.jpg"/>
+  <img width=42% src="https://imgur.com/YBvH4XZ.jpg"/>
   <img width=50% src="https://imgur.com/Y9NNslI.jpg"/>
   <img width=50% src="https://imgur.com/uxu572M.jpg"/>
 </div>
