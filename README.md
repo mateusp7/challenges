@@ -6,6 +6,9 @@ Frontend Mentor.</p>
 <p>Uma das coisas que sempre gostei de fazer foi me desafiar a fazer projetos, acho essencial para um aprendizado mais profundo acerca do assunto, pois quando
 conseguimos executar algum desafio, isso que dizer que estamos aprendendo o que nos foi ensinado.</p>
 
+<h2>Aviso</h2>
+<p>Alguns projetos funcionam melhor usando o live server. Algumas vezes, ao abrir o projeto pelo index.html, ele não reconhece algumas pastas.</p>
+
 <h2>Projetos</h2>
 <p>Abaixo deixarei algumas imagens dos projetos que executei e que estão disponíveis nesse repostório</p>
 <div style="display:flex; align-items: center;"> 
@@ -17,5 +20,3 @@ conseguimos executar algum desafio, isso que dizer que estamos aprendendo o que 
   <img src="https://imgur.com/uxu572M.jpg"/>
 </div>
 
-<h2>Aviso</h2>
-<p>Alguns projetos funcionam melhor usando o live server. Algumas vezes, ao abrir o projeto pelo index.html, ele não reconhece algumas pastas.</p>
