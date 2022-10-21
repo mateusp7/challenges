@@ -11,12 +11,12 @@ conseguimos executar algum desafio, isso que dizer que estamos aprendendo o que 
 
 <h2>Projetos</h2>
 <p>Abaixo deixarei algumas imagens dos projetos que executei e que estão disponíveis nesse repostório</p>
-<div style="display:flex; align-items: center;"> 
-  <img src="https://imgur.com/fiwfomm.jpg"/>
-  <img src="https://imgur.com/XfFxVWn.jpg"/>
-  <img src="https://imgur.com/SZ3qneQ.jpg"/>
-  <img src="https://imgur.com/YBvH4XZ.jpg"/>
-  <img src="https://imgur.com/Y9NNslI.jpg"/>
-  <img src="https://imgur.com/uxu572M.jpg"/>
+<div style="display:flex; align-items:center;"> 
+  <img width=35% src="https://imgur.com/fiwfomm.jpg"/>
+  <img width=35% src="https://imgur.com/XfFxVWn.jpg"/>
+  <img width=35% src="https://imgur.com/SZ3qneQ.jpg"/>
+  <img width=35% src="https://imgur.com/YBvH4XZ.jpg"/>
+  <img width=50% src="https://imgur.com/Y9NNslI.jpg"/>
+  <img width=50% src="https://imgur.com/uxu572M.jpg"/>
 </div>
 
