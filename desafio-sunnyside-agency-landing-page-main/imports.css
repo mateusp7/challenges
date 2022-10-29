@@ -1,0 +1,14 @@
+/* Global */
+@import "./css/global/resets.css";
+
+/* Contents */
+@import "./css/content/header/header.css";
+@import "./css/content/main/main.css";
+@import "./css/content/section/section.css";
+@import "./css/content/article-images/article.css";
+@import "./css/content/footer/footer.css";
+
+/* Utilidades */
+@import "./css/utilidades/rootColors.css";
+@import "./css/utilidades/rootFonts.css";
+@import "./css/utilidades/componentes.css";

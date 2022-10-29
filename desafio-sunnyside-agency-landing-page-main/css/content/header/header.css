@@ -1,0 +1,113 @@
+.bg-header-topo-content {
+  background-image: url("../../../images/desktop/image-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 20rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  color: var(--white);
+}
+.navegacao .button-contact {
+  color: #23303E;
+  background: var(--white);
+  padding: 0.8rem 1.4rem;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.navegacao .button-contact:hover {
+  background: #7ed6ff;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-content h1 {
+  text-align: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  letter-spacing: 0.4rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.icon-hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .navegacao-container {
+    display: none;
+  }
+  .icon-hamburger {
+    display: block;
+    position: relative;
+  }
+  .navegacao-container.ativo {
+    display: block;
+    position: absolute;
+    background: var(--white);
+    top: 6rem;
+    right: 1.3rem;
+    padding: 2.5rem 6rem;
+    -webkit-animation: openMenu 0.3s forwards linear;
+            animation: openMenu 0.3s forwards linear;
+  }
+  .navegacao-container.ativo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    height: 0px;
+    border-left: 24px solid transparent;
+    border-bottom: 20px solid var(--white);
+  }
+  .navegacao {
+    flex-direction: column;
+    color: var(--darkGrayishBlue);
+  }
+  .navegacao .button-contact {
+    background: var(--yellow);
+  }
+}
+@-webkit-keyframes openMenu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes openMenu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}/*# sourceMappingURL=header.css.map */

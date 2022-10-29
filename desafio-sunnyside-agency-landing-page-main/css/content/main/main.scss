@@ -1,0 +1,159 @@
+.main-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    .text {
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 5rem 5rem 10rem;
+        & h2 {
+            font-size: 3rem;
+            color: var(--veryDarkDesatured);
+            margin-bottom: 2rem;
+            max-width: max-content;
+        }
+        & p {
+            color: var(--darkGrayishBlue);
+            font-size: 1.2rem;
+            line-height: 2rem;
+            max-width: 45ch;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        & a {
+            position: relative;
+            max-width: max-content;
+        }
+        & a::after {
+            content: "";
+            width: 0;
+            position: absolute;
+            height: 6px;
+            background: var(--yellow);
+            top: 13px;
+            left: -5px;
+            bottom: 0;
+            right: 0;
+            border-radius: 4px;
+            z-index: -1;
+            transition: 0.3s;
+        }
+        & a:hover::after {
+            width: calc(100% + 10px);
+        }
+    }
+    .text-2 {
+        & a::after {
+            background: var(--softRed);
+        }
+    }
+    .image{
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    .image-with-text-one {
+        position: relative;
+        .container-text-image-one {
+            display: grid;
+            place-content: center;
+            justify-content: center;
+            gap: 2rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            text-align: center;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            & h3 {
+                font-size: 2.5rem;
+                color: var(--darkDesaturatedCyan);
+                text-align: center;
+            }
+            & p {
+                font-size: 1.1rem;
+                color: var(--darkDesaturatedCyan);
+                max-width: 40ch;
+                text-align: center;
+                line-height: 1.6rem;
+            }
+        }
+    }
+    .image-with-text-two {
+        position: relative;
+        .container-text-image-two {
+            display: grid;
+            place-content: center;
+            justify-content: center;
+            gap: 2rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            text-align: center;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            & h3 {
+                font-size: 2.5rem;
+                color: var(--darkBlue);
+                text-align: center;
+            }
+            & p {
+                font-size: 1.1rem;
+                color: var(--darkBlue);
+                max-width: 40ch;
+                text-align: center;
+                line-height: 1.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        .text {
+            align-items: center;
+            text-align: center;
+            padding-left: 5rem;
+            & h2 {
+                font-size: 2rem;
+            }
+            & a::after {
+                width: calc(100% + 10px);
+            }
+        }
+        .image img {
+            object-fit: cover;
+        }
+        .image-with-text-one {
+            .container-text-image-one {
+                & h3 {
+                    font-size: 2rem;
+                }
+                & p {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .image-with-text-two {
+            .container-text-image-two {
+                & h3 {
+                    font-size: 2rem;
+                }
+                & p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    #image-graphic-design, #image-photography {
+        height: 600px;
+    }
+    .image1 {
+        grid-row: 1;
+    }
+}

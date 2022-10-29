@@ -1,0 +1,17 @@
+.article-content{
+    display: flex;
+}
+
+.section-article div img {
+    object-fit: contain;
+}
+
+@media (max-width: 1000px) {
+    .article-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-article div img {
+        object-fit: cover;
+    }
+} 

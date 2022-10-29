@@ -1,0 +1,60 @@
+.section-content {
+  background: var(--white);
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+  padding-left: 1.2rem;
+}
+.section-content h1 {
+  text-align: center;
+  margin-bottom: 6rem;
+  color: var(--grayishBlue);
+  letter-spacing: 0.5rem;
+}
+
+.content-users {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+.content-users .user-content-person {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.content-users .user-content-person img {
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+.content-users .user-content-person p {
+  font-size: 1.2rem;
+  color: var(--veryDarkDesatured);
+  line-height: 2rem;
+  text-align: center;
+  max-width: 35ch;
+  margin-bottom: 4rem;
+}
+.content-users .user-content-person span {
+  margin-top: 0.7rem;
+  color: var(--grayishBlue);
+}
+
+@media (max-width: 1000px) {
+  .section-content {
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+  .section-content h1 {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+  }
+  .content-users {
+    gap: 5rem;
+  }
+  .content-users .user-content-person p {
+    margin-bottom: 2rem;
+  }
+  .content-users .user-content-person span {
+    margin-top: 0.7rem;
+  }
+}/*# sourceMappingURL=section.css.map */
