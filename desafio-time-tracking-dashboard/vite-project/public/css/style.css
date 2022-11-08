@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+body {
+  margin: 0px;
+  background: hsl(226deg, 43%, 10%);
+  color: white;
+  font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin: 0px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  margin-top: 100px;
+  gap: 40px;
+}
+.container .perfil-container {
+  width: 230px;
+  border-radius: 14px;
+  background: hsl(235deg, 46%, 20%);
+}
+.container .perfil-container .perfil-info {
+  background: hsl(246deg, 80%, 60%);
+  padding: 30px 20px 80px 20px;
+  border-radius: 14px;
+}
+.container .perfil-container .perfil-info img {
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+.container .perfil-container .perfil-info h4 {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: hsl(236deg, 100%, 87%);
+}
+.container .perfil-container .perfil-info h1 {
+  font-size: 1.9rem;
+  font-weight: 300;
+}
+.container .perfil-container .perfil-options {
+  padding: 20px 20px 30px 20px;
+}
+.container .perfil-container .perfil-options .perfil-list-options li {
+  line-height: 2;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: hsl(236deg, 100%, 87%);
+  letter-spacing: 0.2px;
+}
+.container .perfil-container .perfil-options .perfil-list-options li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.container-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  gap: 20px 20px;
+}
+.container-info .box-container1 {
+  background: hsl(15deg, 100%, 70%);
+}
+.container-info .box-container2 {
+  background: hsl(195deg, 74%, 62%);
+}
+.container-info .box-container3 {
+  background: hsl(348deg, 100%, 68%);
+}
+.container-info .box-container4 {
+  background: hsl(145deg, 58%, 55%);
+}
+.container-info .box-container5 {
+  background: hsl(264deg, 64%, 52%);
+}
+.container-info .box-container6 {
+  background: hsl(43deg, 84%, 65%);
+}
+.container-info .box-container {
+  width: 230px;
+  border-radius: 14px;
+  z-index: 999;
+  position: relative;
+}
+.container-info .box-container .box-bg {
+  height: 35px;
+  position: relative;
+}
+.container-info .box-container .icon-work {
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+  margin-right: 12px;
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.container-info .box-container .box-content {
+  border-radius: 14px;
+  padding: 28px 20px;
+  background: hsl(235deg, 46%, 20%);
+}
+.container-info .box-container .box-content .box-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container-info .box-container .box-content .box-title h3 {
+  font-weight: 400;
+}
+.container-info .box-container .box-content .box-title img {
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+.container-info .box-container .box-content .box-title-info h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.container-info .box-container .box-content .box-title-info p {
+  color: hsl(235deg, 45%, 61%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */
