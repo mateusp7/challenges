@@ -13,7 +13,7 @@ const createCardWekly = (valueBox, name, current, previous) => {
       const boxTitle = document.createElement('div');
       boxTitle.className = 'box-title';
         const h3BoxTitle = document.createElement('h3')
-        h3BoxTitle.textContent = name;
+        h3BoxTitle.textContent = (name).replace("-", " ");
         const imgBoxTitle = document.createElement('img');
         imgBoxTitle.src = '/assets/icon-ellipsis.svg';
       const boxTitleInfo = document.createElement('div');
@@ -39,9 +39,8 @@ const createCardWekly = (valueBox, name, current, previous) => {
 async function getData() {
   const response = await fetch('./data.json');
   const json = await response.json();
-  console.log(json);
   json.forEach((item, index) => {
-    console.log(containerInfo.appendChild(createCardWekly(index + 1, item.title, item.timeframes.weekly.current, item.timeframes.weekly.previous)))
+    containerInfo.appendChild(createCardWekly(index + 1, (item.title).replace(" ", "-"), item.timeframes.weekly.current, item.timeframes.weekly.previous))
   })
 }
 
