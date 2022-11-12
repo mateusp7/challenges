@@ -36,7 +36,8 @@ img {
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 820px;
   justify-content: center;
   align-items: center;
   place-content: center;
@@ -88,7 +89,7 @@ img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  min-width: 800px;
   gap: 20px 20px;
 }
 .container-info .box-container1 {
@@ -133,6 +134,11 @@ img {
   border-radius: 14px;
   padding: 28px 20px;
   background: hsl(235deg, 46%, 20%);
+  cursor: pointer;
+}
+.container-info .box-container .box-content:hover {
+  background: hsl(236deg, 40%, 27%);
+  transition: all 0.3s ease-in-out;
 }
 .container-info .box-container .box-content .box-title {
   display: flex;

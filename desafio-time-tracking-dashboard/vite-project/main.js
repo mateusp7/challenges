@@ -1,4 +1,8 @@
 const containerInfo = document.querySelector(".container-info");
+const buttonDaily = document.querySelector(".button-daily");
+const buttonWeekly = document.querySelector(".button-weekly");
+const buttonMonthly = document.querySelector(".button-monthly");
+const buttons = document.querySelectorAll('.button')
 
 const createCardWekly = (valueBox, name, current, previous) => {
   const boxContainer = document.createElement('div');
@@ -36,7 +40,24 @@ const createCardWekly = (valueBox, name, current, previous) => {
       return boxContainer;
 }
 
-async function getData() {
+function remove() {
+  const boxContainer = document.querySelectorAll('.box-container');
+  boxContainer.forEach((item) => {
+    containerInfo.removeChild(item)
+  })
+}
+
+async function getDataDaily() {
+  remove();
+  const response = await fetch('./data.json');
+  const json = await response.json();
+  json.forEach((item, index) => {
+    containerInfo.appendChild(createCardWekly(index + 1, (item.title).replace(" ", "-"), item.timeframes.daily.current, item.timeframes.daily.previous))
+  });
+}
+
+async function getDataWeekly() {
+  remove();
   const response = await fetch('./data.json');
   const json = await response.json();
   json.forEach((item, index) => {
@@ -44,4 +65,17 @@ async function getData() {
   })
 }
 
-getData()
+async function getDataMonthly() {
+  remove();
+  const response = await fetch('./data.json');
+  const json = await response.json();
+  json.forEach((item, index) => {
+    containerInfo.appendChild(createCardWekly(index + 1, (item.title).replace(" ", "-"), item.timeframes.monthly.current, item.timeframes.monthly.previous))
+  })
+}
+
+getDataWeekly()
+
+buttonWeekly.addEventListener("click", getDataWeekly);
+buttonDaily.addEventListener("click", getDataDaily);
+buttonMonthly.addEventListener("click", getDataMonthly);
