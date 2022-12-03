@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="checkbox"] {
+  display: grid;
+  place-content: center;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+input[type="checkbox"]::before {
+  content: url('/img/correct-icon.svg');
+  display: inline-block;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
