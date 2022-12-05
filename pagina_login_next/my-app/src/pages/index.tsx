@@ -9,9 +9,10 @@ export default function Home() {
   const [remember, setRemember] = React.useState<any | null>([]);
 
   const colors = {
-    primaryColor: "#AFBE8F",
-    secondaryColor: "#7D8570",
-    tertiaryColor: "#646F58",
+    primaryColor: "#BBADFF",
+    secondaryColor: "#9FA0FF",
+    tertiaryColor: "#8E94F2",
+    neutralColor: "#373737",
     fullWhite: "#FFFFFF",
   };
 
@@ -108,7 +109,7 @@ export default function Home() {
                       background: colors.primaryColor,
                       borderColor: colors.primaryColor,
                     }
-                  : { background: "#ffffff" }
+                  : { background: "#ffffff", borderColor: colors.neutralColor }
               }
             />
             <label
@@ -117,14 +118,14 @@ export default function Home() {
               style={
                 remember.length > 0
                   ? { color: colors.primaryColor }
-                  : { color: colors.tertiaryColor }
+                  : { color: colors.neutralColor }
               }
             >
               Remember me
             </label>
           </div>
           <div>
-            <p>Forgot Password</p>
+            <p style={{ color: colors.neutralColor }}>Forgot Password</p>
           </div>
         </div>
       </div>
