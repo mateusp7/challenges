@@ -16,6 +16,7 @@ export default function Home() {
     fullWhite: "#FFFFFF",
   };
 
+
   function handleChange({ target }: React.ChangeEvent<HTMLInputElement>) {
     if (target.checked) {
       setRemember([...remember, target.value] as any | string);
@@ -86,9 +87,12 @@ export default function Home() {
           <button
             type="submit"
             className="w-full px-4 py-3 mb-4 font-bold text-center text-white rounded-3xl"
-            style={{
-              background: `linear-gradient(to right, ${colors.primaryColor}, ${colors.secondaryColor}`,
-            }}
+            style={
+              { background: `linear-gradient(to right, ${colors.primaryColor}, ${colors.secondaryColor}`,
+                
+              }
+              
+          }
           >
             Sign in
           </button>
@@ -102,14 +106,16 @@ export default function Home() {
               value="Remember me"
               checked={checkRemember("Remember me")}
               onChange={handleChange}
-              className="w-4 h-4 m-0 bg-white border-2 rounded appearance-none cursor-pointer border-slate-500"
+              className="w-4 h-4 m-0 bg-white border-2 rounded appearance-none cursor-pointer"
               style={
                 remember.length > 0
                   ? {
                       background: colors.primaryColor,
                       borderColor: colors.primaryColor,
                     }
-                  : { background: "#ffffff", borderColor: colors.neutralColor }
+                  : { background: "#ffffff", 
+                      borderColor: colors.neutralColor 
+                    }
               }
             />
             <label
