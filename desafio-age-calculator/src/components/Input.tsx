@@ -25,7 +25,7 @@ const Input = forwardRef(
         </label>
         <input
           {...rest}
-          className="w-32 px-3 py-2 text-lg border rounded outline-none border-lightGrey bg-none text-offBlack"
+          className="w-20 px-3 py-2 text-lg border rounded outline-none lg:w-32 border-lightGrey bg-none text-offBlack"
           type="text"
           name={name}
           id={name}

@@ -105,12 +105,12 @@ function App() {
     setDays(result.days)
   }
   return (
-    <div className="flex items-center justify-center h-screen max-w-2xl m-auto ">
+    <div className="flex items-center justify-center h-screen max-w-lg p-4 m-auto lg:max-w-2xl">
       <form
         onSubmit={handleSubmit(handleSubmitDate)}
-        className="w-full bg-white pl-9 pr-28 py-10 rounded-br-[80px] rounded-lg flex flex-col gap-10 relative"
+        className="w-full bg-white px-6 lg:pl-9 lg:pr-28 py-10 rounded-br-[80px] rounded-lg flex flex-col gap-14 lg:gap-10 relative"
       >
-        <div className="flex items-center gap-8 pb-10 border-b border-lightGrey">
+        <div className="flex items-center gap-4 pb-10 border-b lg:gap-8 border-lightGrey">
           <Input
             errors={errors && errors.day?.message}
             {...register("day")}
@@ -132,11 +132,11 @@ function App() {
         </div>
         <button
           type="submit"
-          className="absolute p-3 rounded-full top-[9rem] right-28 bg-purple cursor-pointer hover:bg-offBlack duration-150 ease-linear transition-all"
+          className="absolute p-2 transition-all duration-150 ease-linear rounded-full cursor-pointer lg:p-3 right-6 top-32 lg:right-28 bg-purple hover:bg-offBlack max-w-max"
         >
           <img src={Arrow} alt="Arrow" />
         </button>
-        <section className="flex flex-col gap-4 text-6xl italic font-bold">
+        <section className="flex flex-col gap-4 text-4xl italic font-bold lg:text-6xl">
           <h1>
             <span className="text-purple">{years}</span> years
           </h1>
