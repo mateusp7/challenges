@@ -16,7 +16,7 @@ const Input = forwardRef(
     const { name, label, placeholder, errors, ...rest } = props
 
     return (
-      <div className="relative">
+      <div>
         <label
           className="block mb-2 text-xs tracking-widest text-smokeyGrey"
           htmlFor={name}
@@ -33,11 +33,11 @@ const Input = forwardRef(
           ref={ref}
         />
         {errors ? (
-          <span className="block text-[10px] italic tracking-widest text-lightRed absolute -bottom-5">
+          <span className="block text-[10px] italic tracking-widest text-lightRed pt-2">
             {errors}
           </span>
         ) : (
-          ""
+          <div className="box-border w-full h-3 pt-2"></div>
         )}
       </div>
     )

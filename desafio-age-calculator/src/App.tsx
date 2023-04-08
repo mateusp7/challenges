@@ -4,12 +4,7 @@ import * as yup from "yup"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
-
-export type DateValues = {
-  day: number
-  month: number
-  year: number
-}
+import { DateValues } from "./types/Date"
 
 function App() {
   const [years, setYears] = useState<string | number>("--")
@@ -18,9 +13,33 @@ function App() {
   const schema = yup
     .object()
     .shape({
-      day: yup.string().required("This field is required"),
-      month: yup.string().required("This field is required"),
-      year: yup.string().required("This field is required"),
+      day: yup
+        .string()
+        .required("This field is required")
+        .test("valid-day", "Must be a valid day", (value) => {
+          const day = parseInt(value, 10)
+          if (day > 31) return false
+          if (day < 1) return false
+          else return true
+        }),
+      month: yup
+        .string()
+        .required("This field is required")
+        .test("valid-month", "Must be a valid month", (value) => {
+          const month = parseInt(value, 10)
+          if (month > 12) return false
+          if (month < 1) return false
+          else return true
+        }),
+      year: yup
+        .string()
+        .required("This field is required")
+        .test("valid-year", "Must be a valid year", (value) => {
+          const currentYear = new Date().getFullYear()
+          const year = parseInt(value, 10)
+          if (year > currentYear) return false
+          else return true
+        }),
     })
     .required()
 
@@ -37,7 +56,7 @@ function App() {
     date2: Date
   ): { years: number; months: number; days: number } {
     const diff = new Date(date2.getTime() - date1.getTime())
-
+    2
     const years = diff.getUTCFullYear() - 1970
     const months = diff.getUTCMonth()
     const days = diff.getUTCDate() - 1
@@ -46,7 +65,11 @@ function App() {
   }
 
   const handleSubmitDate: SubmitHandler<DateValues> = (formData) => {
-    const date = new Date(formData.year, formData.month - 1, formData.day)
+    const date = new Date(
+      Number(formData.year),
+      Number(formData.month) - 1,
+      Number(formData.day)
+    )
     const today = new Date()
     const result = diffDates(date, today)
     setYears(result.years)
@@ -59,7 +82,7 @@ function App() {
         onSubmit={handleSubmit(handleSubmitDate)}
         className="w-full bg-white pl-9 pr-28 py-10 rounded-br-[80px] rounded-lg flex flex-col gap-10 relative"
       >
-        <div className="flex items-center gap-4 pb-10 border-b border-lightGrey">
+        <div className="flex items-center gap-8 pb-10 border-b border-lightGrey">
           <Input
             errors={errors && errors.day?.message}
             {...register("day")}
@@ -81,7 +104,7 @@ function App() {
         </div>
         <button
           type="submit"
-          className="absolute p-3 rounded-full top-[7.5rem] right-28 bg-purple cursor-pointer hover:bg-offBlack duration-150 ease-linear transition-all"
+          className="absolute p-3 rounded-full top-[9rem] right-28 bg-purple cursor-pointer hover:bg-offBlack duration-150 ease-linear transition-all"
         >
           <img src={Arrow} alt="Arrow" />
         </button>
