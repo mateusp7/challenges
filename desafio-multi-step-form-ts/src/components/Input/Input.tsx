@@ -3,7 +3,6 @@ import { InputHTMLAttributes } from "react"
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string
   label?: string
-  required?: boolean
   isPassword?: boolean
   error?: string
 }
@@ -11,7 +10,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({
   className,
   label,
-  required,
   name,
   placeholder,
   isPassword,
@@ -36,7 +34,6 @@ const Input: React.FC<InputProps> = ({
         className={`${className} w-full outline-none border rounded-lg py-2 px-3 focus:border-purplistBlue ${
           error ? "border-strawberryRed" : "border-lightGray"
         }`}
-        required={required}
         {...props}
       />
     </div>

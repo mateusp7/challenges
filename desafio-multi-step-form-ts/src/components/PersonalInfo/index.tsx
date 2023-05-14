@@ -1,8 +1,42 @@
+import * as zod from "zod"
+import { Controller, useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+
 import LayoutStepForm from "../../layout"
 import Input from "../Input/Input"
 import { TitleDescription } from "../TitleDescription"
 
+const personalInfoSchema = zod.object({
+  name: zod
+    .string({
+      invalid_type_error: "Only letters",
+    })
+    .nonempty({ message: "This field is required" }),
+  emailAddress: zod
+    .string({ invalid_type_error: "Only letters" })
+    .nonempty({ message: "This field is required" })
+    .email({ message: "Invalid email" }),
+  phoneNumber: zod
+    .string({ invalid_type_error: "Only letters" })
+    .nonempty({ message: "This field is required" }),
+})
+
+type PersonalInfoData = zod.infer<typeof personalInfoSchema>
+
 export const PersonalInfo = () => {
+  const { handleSubmit, control } = useForm<PersonalInfoData>({
+    resolver: zodResolver(personalInfoSchema),
+    defaultValues: {
+      name: "",
+      emailAddress: "",
+      phoneNumber: "",
+    },
+  })
+
+  function handleNextStep() {
+    console.log("Next step")
+  }
+
   return (
     <div className="flex h-[600px] items-center justify-center w-[900px] bg-white p-4 rounded-xl">
       <LayoutStepForm>
@@ -11,17 +45,61 @@ export const PersonalInfo = () => {
             title="Personal Info"
             description="Please provide your name, email address, and phone number."
           />
-          <form className="mt-10 flex flex-col gap-4">
-            <Input label="Name" required placeholder="your name" />
-            <Input
-              label="Email Address"
-              required
-              placeholder="email@example.com"
+          <form
+            onSubmit={handleSubmit(handleNextStep)}
+            className="mt-10 flex flex-col gap-4"
+          >
+            <Controller
+              control={control}
+              name="name"
+              render={({
+                field: { onChange, onBlur, value },
+                fieldState: { error },
+              }) => (
+                <Input
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  label="Name"
+                  placeholder="your name"
+                  error={error?.message}
+                />
+              )}
             />
-            <Input
-              label="Phone Number"
-              required
-              placeholder="e.g. +1 234 567 890"
+            <Controller
+              control={control}
+              name="emailAddress"
+              render={({
+                field: { onChange, onBlur, value },
+                fieldState: { error },
+              }) => (
+                <Input
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  label="Email Address"
+                  placeholder="email@example.com"
+                  error={error?.message}
+                />
+              )}
+            />
+            <Controller
+              rules={{ required: true }}
+              control={control}
+              name="phoneNumber"
+              render={({
+                field: { onChange, onBlur, value },
+                fieldState: { error },
+              }) => (
+                <Input
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  label="Phone Number"
+                  placeholder="e.g. +1 234 567 890"
+                  error={error?.message}
+                />
+              )}
             />
 
             <button className="bg-marineBlue py-2 px-4 hover:bg-purplistBlue transition-all duration-300 text-white rounded-lg max-w-max self-end mt-10">
