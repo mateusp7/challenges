@@ -1,6 +1,6 @@
+import * as yup from "yup"
 import Input from "./components/Input"
 import Arrow from "./assets/images/icon-arrow.svg"
-import * as yup from "yup"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
