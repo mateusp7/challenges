@@ -9,16 +9,19 @@ import { TitleDescription } from "../TitleDescription"
 const personalInfoSchema = zod.object({
   name: zod
     .string({
-      invalid_type_error: "Only letters",
+      invalid_type_error: "Just letters",
     })
     .nonempty({ message: "This field is required" }),
   emailAddress: zod
-    .string({ invalid_type_error: "Only letters" })
+    .string({ invalid_type_error: "Just letters" })
     .nonempty({ message: "This field is required" })
     .email({ message: "Invalid email" }),
   phoneNumber: zod
-    .string({ invalid_type_error: "Only letters" })
-    .nonempty({ message: "This field is required" }),
+    .string({ invalid_type_error: "Just letters" })
+    .nonempty({ message: "This field is required" })
+    .regex(/^(\+1)?\s?\d{3}\s?\d{3}\s?\d{3}$/, {
+      message: "Invalid phone number",
+    }),
 })
 
 type PersonalInfoData = zod.infer<typeof personalInfoSchema>
