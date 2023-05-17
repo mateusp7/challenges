@@ -2,8 +2,8 @@ import { createContext, useState } from "react"
 
 interface FormData {
   name: string
-  email: string
-  phone: string
+  emailAddress: string
+  phoneNumber: string
   // adicione aqui as outras informações do seu formulário
 }
 
@@ -25,8 +25,8 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "",
-    phone: "",
+    emailAddress: "",
+    phoneNumber: "",
     // inicialize aqui as outras informações do seu formulário
   })
 

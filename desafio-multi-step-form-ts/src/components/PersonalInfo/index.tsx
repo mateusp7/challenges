@@ -5,8 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import LayoutStepForm from "../../layout"
 import Input from "../Input/Input"
 import { TitleDescription } from "../TitleDescription"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { FormContext, FormContextType } from "../../context"
+import { CircleNotch } from "phosphor-react"
 
 const personalInfoSchema = zod.object({
   name: zod
@@ -29,7 +30,10 @@ const personalInfoSchema = zod.object({
 type PersonalInfoData = zod.infer<typeof personalInfoSchema>
 
 export const PersonalInfo = () => {
-  const { nextStep, step } = useContext(FormContext) as FormContextType
+  const [isLoading, setIsLoading] = useState(false)
+  const { nextStep, step, setFormData, formData } = useContext(
+    FormContext
+  ) as FormContextType
 
   const { handleSubmit, control } = useForm<PersonalInfoData>({
     resolver: zodResolver(personalInfoSchema),
@@ -40,9 +44,19 @@ export const PersonalInfo = () => {
     },
   })
 
-  function handleNextStep() {
-    nextStep()
+  function handleNextStep(data: PersonalInfoData) {
+    setIsLoading(true)
+    setFormData({ ...formData, ...data })
+
+    setTimeout(() => {
+      setIsLoading(false)
+      nextStep()
+    }, 1000)
   }
+
+  useEffect(() => {
+    console.log(formData)
+  }, [formData])
 
   if (step === 1)
     return (
@@ -110,8 +124,15 @@ export const PersonalInfo = () => {
                 )}
               />
 
-              <button className="self-end px-4 py-2 mt-10 text-white transition-all duration-300 rounded-lg bg-marineBlue hover:bg-purplistBlue max-w-max">
-                Next Step
+              <button
+                disabled={isLoading}
+                className={`self-end px-4 py-2 mt-10 text-white transition-all duration-300 rounded-lg bg-marineBlue hover:bg-purplistBlue w-40 h-10 flex justify-center items-center`}
+              >
+                {isLoading ? (
+                  <CircleNotch size={16} className={`animate-spin`} />
+                ) : (
+                  "Next Step"
+                )}
               </button>
             </form>
           </div>
