@@ -22,7 +22,7 @@ const YourPlan = () => {
     FormContext
   ) as FormContextType
 
-  const { control, handleSubmit, watch } = useForm<RadioData>({
+  const { control, handleSubmit, watch, setValue } = useForm<RadioData>({
     resolver: zodResolver(radioSchema),
     defaultValues: {
       plan: "",
@@ -33,6 +33,10 @@ const YourPlan = () => {
 
   function handleSelectPlan(data: RadioData) {
     console.log(data)
+  }
+
+  function changeOption(selectedPlan: string) {
+    setValue("plan", selectedPlan)
   }
 
   useEffect(() => {
@@ -56,11 +60,11 @@ const YourPlan = () => {
                 <Controller
                   control={control}
                   name="plan"
-                  render={({ field: { onBlur, onChange } }) => (
+                  render={({ field: { onBlur } }) => (
                     <Radio
-                      onChange={onChange}
                       onBlur={onBlur}
-                      value="Arcade"
+                      onClick={() => changeOption("Arcade")}
+                      checked={radioValue === "Arcade"}
                       icon={Arcade}
                       title="Arcade"
                       subtitle="$9/mo"
@@ -71,11 +75,11 @@ const YourPlan = () => {
                 <Controller
                   control={control}
                   name="plan"
-                  render={({ field: { onBlur, onChange } }) => (
+                  render={({ field: { onBlur } }) => (
                     <Radio
-                      onChange={onChange}
                       onBlur={onBlur}
-                      value="Advanced"
+                      onClick={() => changeOption("Advanced")}
+                      checked={radioValue === "Advanced"}
                       icon={Advanced}
                       title="Advanced"
                       subtitle="$12/mo"
@@ -86,11 +90,11 @@ const YourPlan = () => {
                 <Controller
                   control={control}
                   name="plan"
-                  render={({ field: { onBlur, onChange } }) => (
+                  render={({ field: { onBlur } }) => (
                     <Radio
-                      onChange={onChange}
                       onBlur={onBlur}
-                      value="Pro"
+                      onClick={() => changeOption("Pro")}
+                      checked={radioValue === "Pro"}
                       icon={Pro}
                       title="Pro"
                       subtitle="$15/mo"
@@ -100,7 +104,6 @@ const YourPlan = () => {
                 />
               </main>
             </div>
-            {/* <input type="radio" {...register("plan")} /> */}
             <button>Next Step</button>
           </form>
         </LayoutStepForm>

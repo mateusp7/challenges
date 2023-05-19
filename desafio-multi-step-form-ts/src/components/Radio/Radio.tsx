@@ -25,11 +25,19 @@ export const Radio: React.FC<CheckboxInputProps> = ({
   radioValue,
   ...props
 }) => {
-  const isChecked = title.toLocaleLowerCase() == radioValue.toLocaleLowerCase()
+  const isChecked = title.toLowerCase() == radioValue.toLowerCase()
+
+  console.log("title: " + title.toLowerCase())
+  console.log("radioValue: " + radioValue.toLowerCase())
+  console.log(isChecked)
 
   return (
     <label
-      className={`flex flex-col flex-1 gap-2 p-4 mt-3 transition-all duration-300 border cursor-pointer h-44 rounded-xl border-lightGray hover:border-purplistBlue hover:bg-alabaster`}
+      className={`flex flex-col flex-1 gap-2 p-4 mt-3 transition-all duration-300 border cursor-pointer h-44 rounded-xl  hover:border-purplistBlue hover:bg-alabaster ${
+        isChecked
+          ? "bg-alabaster border-purplistBlue"
+          : "bg-none border-alabaster"
+      }`}
     >
       <img src={icon} alt="" className="w-10 h-10" />
       <input
