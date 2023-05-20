@@ -1,5 +1,3 @@
-import Image from "../../assets/icon-check.svg"
-
 interface CheckboxInputProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
@@ -35,7 +33,7 @@ const Checkbox = ({
           checked={checked}
           id={name}
           name={name}
-          className={`${className} appearance-none w-5 h-5 rounded-md border border-coolGray checked:bg-purplistBlue checked:bg-checked checked:bg-no-repeat checked:bg-contain flex items-center justify-center`}
+          className={`${className} appearance-none flex items-center justify-center w-5 h-5 rounded-md border border-coolGray checked:bg-purplistBlue checked:bg-checked checked:bg-no-repeat checked:bg-contain checked:border-4 checked:border-purplistBlue `}
           {...props}
         />
         <div className="flex flex-col">
