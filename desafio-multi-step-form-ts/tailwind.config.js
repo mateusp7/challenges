@@ -18,6 +18,7 @@ export default {
       },
       backgroundImage: {
         aside: "url('/src/assets/bg-sidebar-desktop.svg')",
+        checked: "url('/src/assets/icon-check.svg')",
       },
     },
   },

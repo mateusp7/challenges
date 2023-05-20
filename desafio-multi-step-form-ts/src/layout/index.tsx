@@ -39,6 +39,7 @@ const LayoutStepForm = ({ children }: LayoutStepFormProps) => {
           {steps &&
             steps.map((step) => (
               <StepItem
+                key={step.step}
                 step={step.step}
                 subTitle={step.subTitle}
                 title={step.title}

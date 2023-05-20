@@ -4,6 +4,11 @@ interface FormData {
   name: string
   emailAddress: string
   phoneNumber: string
+  plan: string
+  type: "Monthly" | "Yearly"
+  onlineService: boolean
+  largeStorage: boolean
+  customizableProfile: boolean
   // adicione aqui as outras informações do seu formulário
 }
 
@@ -27,6 +32,11 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
     name: "",
     emailAddress: "",
     phoneNumber: "",
+    plan: "",
+    type: "Monthly",
+    customizableProfile: false,
+    largeStorage: false,
+    onlineService: false,
     // inicialize aqui as outras informações do seu formulário
   })
 

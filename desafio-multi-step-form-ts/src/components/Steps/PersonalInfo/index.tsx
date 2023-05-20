@@ -2,11 +2,11 @@ import * as zod from "zod"
 import { Controller, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
-import LayoutStepForm from "../../layout"
-import Input from "../Input/Input"
-import { TitleDescription } from "../TitleDescription"
-import { useContext, useEffect, useState } from "react"
-import { FormContext, FormContextType } from "../../context"
+import LayoutStepForm from "../../../layout"
+import Input from "../../Input/Input"
+import { TitleDescription } from "../../TitleDescription"
+import { useContext, useState } from "react"
+import { FormContext, FormContextType } from "../../../context"
 import { CircleNotch } from "phosphor-react"
 
 const personalInfoSchema = zod.object({
@@ -53,10 +53,6 @@ export const PersonalInfo = () => {
       nextStep()
     }, 1000)
   }
-
-  useEffect(() => {
-    console.log(formData)
-  }, [formData])
 
   if (step === 1)
     return (
