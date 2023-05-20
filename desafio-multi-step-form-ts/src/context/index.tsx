@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 interface FormData {
   name: string
@@ -40,11 +40,32 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
     // inicialize aqui as outras informações do seu formulário
   })
 
+  useEffect(() => {
+    const storedStep = localStorage.getItem("currentStep")
+    if (storedStep) {
+      setStep(parseInt(storedStep))
+    } else {
+      localStorage.setItem("currentStep", "1")
+    }
+  }, [])
+
   const nextStep = () => {
-    if (step < 4) setStep(step + 1)
+    if (step < 5) {
+      setStep((oldStep) => {
+        const nextStepValue = oldStep + 1
+        localStorage.setItem("currentStep", nextStepValue.toString())
+        return nextStepValue
+      })
+    }
   }
   const prevStep = () => {
-    if (step > 0) setStep(step - 1)
+    if (step > 0) {
+      setStep((oldStep) => {
+        const previousStepValue = oldStep - 1
+        localStorage.setItem("currentStep", previousStepValue.toString())
+        return previousStepValue
+      })
+    }
   }
   return (
     <FormContext.Provider
