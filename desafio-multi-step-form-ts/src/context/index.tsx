@@ -28,6 +28,7 @@ interface Props {
 
 export const FormProvider: React.FC<Props> = ({ children }) => {
   const [step, setStep] = useState(1)
+  // TODO: Save data in localStorage
   const [formData, setFormData] = useState<FormData>({
     name: "",
     emailAddress: "",
