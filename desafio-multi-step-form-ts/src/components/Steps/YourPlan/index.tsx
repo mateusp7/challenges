@@ -60,9 +60,7 @@ const YourPlan = () => {
   }
 
   function handleSelectPlan(data: RadioData) {
-    console.log(data)
     const [value, finalValue] = getValue(data)
-    console.log(value, finalValue)
     setIsLoading(true)
     setFormData({
       ...formData,
