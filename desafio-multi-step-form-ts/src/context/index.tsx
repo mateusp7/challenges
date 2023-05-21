@@ -9,6 +9,8 @@ interface FormData {
   onlineService: boolean
   largeStorage: boolean
   customizableProfile: boolean
+  value: string | number
+  finalValue: number | string
   // adicione aqui as outras informações do seu formulário
 }
 
@@ -18,6 +20,8 @@ export type FormContextType = {
   setFormData: React.Dispatch<React.SetStateAction<FormData>>
   nextStep: () => void
   prevStep: () => void
+  backToThirdStep: () => void
+  backToSpecificStep: (step: number) => void
 }
 
 export const FormContext = createContext<FormContextType | null>(null)
@@ -38,6 +42,8 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
     customizableProfile: false,
     largeStorage: false,
     onlineService: false,
+    value: "",
+    finalValue: 0,
     // inicialize aqui as outras informações do seu formulário
   })
 
@@ -49,6 +55,21 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
       localStorage.setItem("currentStep", "1")
     }
   }, [])
+
+  const backToThirdStep = () => {
+    setStep(() => {
+      const toThirdStep = 2
+      localStorage.setItem("currentStep", toThirdStep.toString())
+      return toThirdStep
+    })
+  }
+
+  const backToSpecificStep = (step: number) => {
+    setStep(() => {
+      localStorage.setItem("currentStep", step.toString())
+      return step
+    })
+  }
 
   const nextStep = () => {
     if (step < 5) {
@@ -70,7 +91,15 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
   }
   return (
     <FormContext.Provider
-      value={{ step, formData, setFormData, nextStep, prevStep }}
+      value={{
+        step,
+        formData,
+        setFormData,
+        nextStep,
+        prevStep,
+        backToThirdStep,
+        backToSpecificStep,
+      }}
     >
       {children}
     </FormContext.Provider>

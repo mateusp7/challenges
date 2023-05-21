@@ -2,7 +2,7 @@ import * as zod from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import LayoutStepForm from "../../../layout"
 import { TitleDescription } from "../../TitleDescription"
 import { FormContext, FormContextType } from "../../../context"
@@ -36,12 +36,39 @@ const YourPlan = () => {
 
   function changeOption(selectedPlan: string) {
     setValue("plan", selectedPlan)
+    setFormData({ ...formData, plan: selectedPlan })
+  }
+
+  function getValue(data: RadioData) {
+    if (formData.type === "Monthly") {
+      if (data.plan === "Arcade") {
+        return ["$9/mo", 9]
+      } else if (data.plan === "Advanced") {
+        return ["$12/mo", 12]
+      } else if (data.plan === "Pro") {
+        return ["$15/mo", 15]
+      }
+    } else if (formData.type === "Yearly") {
+      if (data.plan === "Arcade") {
+        return ["$90/yr", 90]
+      } else if (data.plan === "Advanced") {
+        return ["120/yr", 120]
+      } else if (data.plan === "Pro") {
+        return ["$150/yr", 150]
+      }
+    }
+    return ["$1", 1]
   }
 
   function handleSelectPlan(data: RadioData) {
-    console.log(formData)
+    const [value, finalValue] = getValue(data)
     setIsLoading(true)
-    setFormData({ ...formData, ...data })
+    setFormData({
+      ...formData,
+      plan: data.plan,
+      value: value,
+      finalValue: finalValue,
+    })
 
     setTimeout(() => {
       setIsLoading(false)

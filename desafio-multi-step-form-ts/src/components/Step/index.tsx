@@ -8,17 +8,22 @@ export interface StepProps {
 }
 
 export const StepItem = ({ step, subTitle, title }: StepProps) => {
-  const { step: currentStep } = useContext(FormContext) as FormContextType
+  const { step: currentStep, backToSpecificStep } = useContext(
+    FormContext
+  ) as FormContextType
   const sameStep = step === currentStep
   return (
     <li className="flex items-center gap-4 jusitfy-center">
       <div
-        className={`flex items-center justify-center w-8 h-8 rounded-full border border-lightBlue transition-all duration-300 ease-linear ${
+        onClick={() => backToSpecificStep(step)}
+        className={`flex items-center justify-center w-8 h-8 rounded-full border border-lightBlue transition-all duration-300 ease-linear cursor-pointer hover:bg-lightBlue  ${
           sameStep && "bg-lightBlue "
         }`}
       >
         <p
-          className={`font-bold ${sameStep ? "text-marineBlue" : "text-white"}`}
+          className={`font-bold hover:text-marineBlue ${
+            sameStep ? "text-marineBlue" : "text-white"
+          }`}
         >
           {step}
         </p>
