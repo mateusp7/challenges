@@ -60,15 +60,15 @@ const YourPlan = () => {
   }
 
   function handleSelectPlan(data: RadioData) {
-    const [value, finalValue] = getValue(data)
+    const [priceDescription, finalPrice] = getValue(data)
     setIsLoading(true)
     setFormData({
       ...formData,
       plan: {
         planName: data.planName,
         type: formData.plan.type,
-        priceDescription: value,
-        finalPrice: finalValue,
+        priceDescription: priceDescription,
+        finalPrice: finalPrice,
       },
     })
 
