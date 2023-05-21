@@ -2,7 +2,7 @@ import * as zod from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import LayoutStepForm from "../../../layout"
 import { TitleDescription } from "../../TitleDescription"
 import { FormContext, FormContextType } from "../../../context"
@@ -14,7 +14,7 @@ import { CircleNotch } from "phosphor-react"
 import { Toggle } from "../../Toggle"
 
 const radioSchema = zod.object({
-  plan: zod.string().nonempty(),
+  planName: zod.string().nonempty(),
 })
 
 export type RadioData = zod.infer<typeof radioSchema>
@@ -28,46 +28,50 @@ const YourPlan = () => {
   const { control, handleSubmit, watch, setValue } = useForm<RadioData>({
     resolver: zodResolver(radioSchema),
     defaultValues: {
-      plan: "",
+      planName: "",
     },
   })
 
-  const radioValue = watch("plan")
+  const radioValue = watch("planName")
 
-  function changeOption(selectedPlan: string) {
-    setValue("plan", selectedPlan)
-    setFormData({ ...formData, plan: selectedPlan })
+  function changePlanName(selectedPlanName: "Arcade" | "Advanced" | "Pro") {
+    setValue("planName", selectedPlanName)
   }
 
   function getValue(data: RadioData) {
-    if (formData.type === "Monthly") {
-      if (data.plan === "Arcade") {
+    if (formData.plan.type === "Monthly") {
+      if (data.planName === "Arcade") {
         return ["$9/mo", 9]
-      } else if (data.plan === "Advanced") {
+      } else if (data.planName === "Advanced") {
         return ["$12/mo", 12]
-      } else if (data.plan === "Pro") {
+      } else if (data.planName === "Pro") {
         return ["$15/mo", 15]
       }
-    } else if (formData.type === "Yearly") {
-      if (data.plan === "Arcade") {
+    } else if (formData.plan.type === "Yearly") {
+      if (data.planName === "Arcade") {
         return ["$90/yr", 90]
-      } else if (data.plan === "Advanced") {
+      } else if (data.planName === "Advanced") {
         return ["120/yr", 120]
-      } else if (data.plan === "Pro") {
+      } else if (data.planName === "Pro") {
         return ["$150/yr", 150]
       }
     }
-    return ["$1", 1]
+    return ["", 0]
   }
 
   function handleSelectPlan(data: RadioData) {
+    console.log(data)
     const [value, finalValue] = getValue(data)
+    console.log(value, finalValue)
     setIsLoading(true)
     setFormData({
       ...formData,
-      plan: data.plan,
-      value: value,
-      finalValue: finalValue,
+      plan: {
+        planName: data.planName,
+        type: formData.plan.type,
+        priceDescription: value,
+        finalPrice: finalValue,
+      },
     })
 
     setTimeout(() => {
@@ -92,16 +96,16 @@ const YourPlan = () => {
               <main className="flex flex-row justify-between gap-4">
                 <Controller
                   control={control}
-                  name="plan"
+                  name="planName"
                   render={({ field: { onBlur } }) => (
                     <Radio
                       onBlur={onBlur}
-                      onChange={() => changeOption("Arcade")}
+                      onChange={() => changePlanName("Arcade")}
                       checked={radioValue === "Arcade"}
                       icon={Arcade}
                       title="Arcade"
                       subtitle={`$${
-                        formData.type === "Monthly" ? "9/mo" : "90/yr"
+                        formData.plan.type === "Monthly" ? "9/mo" : "90/yr"
                       }`}
                       radioValue={radioValue}
                     />
@@ -109,16 +113,16 @@ const YourPlan = () => {
                 />
                 <Controller
                   control={control}
-                  name="plan"
+                  name="planName"
                   render={({ field: { onBlur } }) => (
                     <Radio
                       onBlur={onBlur}
-                      onChange={() => changeOption("Advanced")}
+                      onChange={() => changePlanName("Advanced")}
                       checked={radioValue === "Advanced"}
                       icon={Advanced}
                       title="Advanced"
                       subtitle={`$${
-                        formData.type === "Monthly" ? "12/mo" : "120/yr"
+                        formData.plan.type === "Monthly" ? "12/mo" : "120/yr"
                       }`}
                       radioValue={radioValue}
                     />
@@ -126,16 +130,16 @@ const YourPlan = () => {
                 />
                 <Controller
                   control={control}
-                  name="plan"
+                  name="planName"
                   render={({ field: { onBlur } }) => (
                     <Radio
                       onBlur={onBlur}
-                      onChange={() => changeOption("Pro")}
+                      onChange={() => changePlanName("Pro")}
                       checked={radioValue === "Pro"}
                       icon={Pro}
                       title="Pro"
                       subtitle={`$${
-                        formData.type === "Monthly" ? "15/mo" : "150/yr"
+                        formData.plan.type === "Monthly" ? "15/mo" : "150/yr"
                       }`}
                       radioValue={radioValue}
                     />

@@ -50,7 +50,7 @@ export const Radio: React.FC<RadioInputProps> = ({
       <div className="mt-auto">
         <h1 className="font-bold text-marineBlue">{title}</h1>
         <h3 className="text-sm font-medium text-coolGray">{subtitle}</h3>
-        {formData.type === "Yearly" ? (
+        {formData.plan.type === "Yearly" ? (
           <p className="font-light text-marineBlue">2 months free</p>
         ) : null}
       </div>

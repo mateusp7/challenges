@@ -8,10 +8,26 @@ export const Toggle = () => {
   function handleChangeToggle() {
     if (currentToggleValue === 1) {
       setCurrentToggleValue(2)
-      setFormData({ ...formData, type: "Yearly" })
+      setFormData({
+        ...formData,
+        plan: {
+          planName: formData.plan.planName,
+          type: "Yearly",
+          priceDescription: formData.plan.priceDescription,
+          finalPrice: formData.plan.finalPrice,
+        },
+      })
     } else {
       setCurrentToggleValue(1)
-      setFormData({ ...formData, type: "Monthly" })
+      setFormData({
+        ...formData,
+        plan: {
+          planName: formData.plan.planName,
+          type: "Monthly",
+          priceDescription: formData.plan.priceDescription,
+          finalPrice: formData.plan.finalPrice,
+        },
+      })
     }
   }
 
@@ -20,7 +36,7 @@ export const Toggle = () => {
       onClick={handleChangeToggle}
       type="button"
       className={`relative flex items-center px-5 py-3 rounded-full cursor-pointer bg-marineBlue before:h-4 before:w-4 before:rounded-full before:bg-white before:inline-block before:absolute before:transition-all before:duration-300 before:ease-in-out ${
-        formData.type === "Monthly" ? "before:left-1" : "before:left-5"
+        formData.plan.type === "Monthly" ? "before:left-1" : "before:left-5"
       }`}
     ></button>
   )

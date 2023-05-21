@@ -1,16 +1,20 @@
 import { createContext, useEffect, useState } from "react"
 
+type Plan = {
+  planName: string
+  type: "Monthly" | "Yearly"
+  priceDescription: string | number
+  finalPrice: string | number
+}
+
 interface FormData {
   name: string
   emailAddress: string
   phoneNumber: string
-  plan: string
-  type: "Monthly" | "Yearly"
+  plan: Plan
   onlineService: boolean
   largeStorage: boolean
   customizableProfile: boolean
-  value: string | number
-  finalValue: number | string
   // adicione aqui as outras informações do seu formulário
 }
 
@@ -37,13 +41,15 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
     name: "",
     emailAddress: "",
     phoneNumber: "",
-    plan: "",
-    type: "Monthly",
+    plan: {
+      planName: "",
+      type: "Monthly",
+      priceDescription: "",
+      finalPrice: 0,
+    },
     customizableProfile: false,
     largeStorage: false,
     onlineService: false,
-    value: "",
-    finalValue: 0,
     // inicialize aqui as outras informações do seu formulário
   })
 

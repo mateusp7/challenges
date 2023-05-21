@@ -9,7 +9,7 @@ export const PlanInformations = () => {
     <div className="flex items-center justify-between pb-4">
       <div className="flex flex-col items-start">
         <h1 className="font-bold text-marineBlue">
-          {formData.plan} {`(${formData.type})`}
+          {formData.plan.planName} {`(${formData.plan.type})`}
         </h1>
         <button
           onClick={backToThirdStep}
@@ -19,7 +19,7 @@ export const PlanInformations = () => {
         </button>
       </div>
       <span className="text-base font-bold text-marineBlue">
-        {formData.value}
+        {formData.plan.priceDescription}
       </span>
     </div>
   )
