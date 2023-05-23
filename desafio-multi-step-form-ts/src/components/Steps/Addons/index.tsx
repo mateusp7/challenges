@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
 import { useContext, useState } from "react"
-import { FormContext, FormContextType } from "../../../context"
+import { FormContext, FormContextType, addOns } from "../../../context"
 import LayoutStepForm from "../../../layout"
 import { TitleDescription } from "../../TitleDescription"
 import { Controller } from "react-hook-form"
@@ -33,13 +33,49 @@ export const Addons = () => {
     },
   })
 
+  function getValue(data: AddonsData) {
+    const addOns: addOns[] = []
+    if (data.onlineService) {
+      const onlineServiceAddOn = {
+        nameOns: "Online Service",
+        priceDescription:
+          formData.plan.type === "Monthly" ? "+$1/mo" : "+$10/yr",
+        finalPrice: formData.plan.type === "Monthly" ? 1 : 10,
+      }
+      addOns.push(onlineServiceAddOn)
+    }
+
+    if (data.largeStorage) {
+      const largeStorageAddOn = {
+        nameOns: "Larger Storage",
+        priceDescription:
+          formData.plan.type === "Monthly" ? "+$2/mo" : "+$20/yr",
+        finalPrice: formData.plan.type === "Monthly" ? 2 : 20,
+      }
+      addOns.push(largeStorageAddOn)
+    }
+
+    if (data.customizableProfile) {
+      const customizableProfileAddOn = {
+        nameOns: "Customizable Profile",
+        priceDescription:
+          formData.plan.type === "Monthly" ? "+$2/mo" : "+$20/yr",
+        finalPrice: formData.plan.type === "Monthly" ? 2 : 20,
+      }
+      addOns.push(customizableProfileAddOn)
+    }
+    return addOns
+  }
+
   function handleSelectOns(data: AddonsData) {
+    const resultAddOns = getValue(data)
+    console.log("resultAddOns", resultAddOns)
     setIsLoading(true)
-    setFormData({ ...formData, ...data })
+    setFormData({ ...formData, addOns: resultAddOns })
 
     setTimeout(() => {
       setIsLoading(false)
-      nextStep()
+      // nextStep()
     }, 1000)
   }
 
@@ -67,7 +103,7 @@ export const Addons = () => {
                       title="Online Service"
                       subtitle="Access to multiplayer games"
                       valueOdds={
-                        formData.type === "Monthly" ? "+$1/mo" : "+$10/yr"
+                        formData.plan.type === "Monthly" ? "+$1/mo" : "+$10/yr"
                       }
                       checked={value.valueOf()}
                     />
@@ -83,7 +119,7 @@ export const Addons = () => {
                       title="Larger storage"
                       subtitle="Extra 1TB of cloud save"
                       valueOdds={
-                        formData.type === "Monthly" ? "+$2/mo" : "+$20/yr"
+                        formData.plan.type === "Monthly" ? "+$2/mo" : "+$20/yr"
                       }
                       checked={value.valueOf()}
                     />
@@ -99,7 +135,7 @@ export const Addons = () => {
                       title="Customizable Profile"
                       subtitle="Custom theme on your profile"
                       valueOdds={
-                        formData.type === "Monthly" ? "+$2/mo" : "+$20/yr"
+                        formData.plan.type === "Monthly" ? "+$2/mo" : "+$20/yr"
                       }
                       checked={value.valueOf()}
                     />

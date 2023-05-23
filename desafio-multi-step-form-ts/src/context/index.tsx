@@ -7,15 +7,18 @@ type Plan = {
   finalPrice: string | number
 }
 
+export type addOns = {
+  nameOns: string
+  priceDescription: string | number
+  finalPrice: string | number
+}
+
 interface FormData {
   name: string
   emailAddress: string
   phoneNumber: string
   plan: Plan
-  onlineService: boolean
-  largeStorage: boolean
-  customizableProfile: boolean
-  // adicione aqui as outras informações do seu formulário
+  addOns: addOns[]
 }
 
 export type FormContextType = {
@@ -47,9 +50,7 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
       priceDescription: "",
       finalPrice: 0,
     },
-    customizableProfile: false,
-    largeStorage: false,
-    onlineService: false,
+    addOns: [],
     // inicialize aqui as outras informações do seu formulário
   })
 
