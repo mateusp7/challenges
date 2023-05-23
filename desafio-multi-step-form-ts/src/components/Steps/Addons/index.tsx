@@ -69,13 +69,12 @@ export const Addons = () => {
 
   function handleSelectOns(data: AddonsData) {
     const resultAddOns = getValue(data)
-    console.log("resultAddOns", resultAddOns)
     setIsLoading(true)
     setFormData({ ...formData, addOns: resultAddOns })
 
     setTimeout(() => {
       setIsLoading(false)
-      // nextStep()
+      nextStep()
     }, 1000)
   }
 

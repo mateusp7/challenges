@@ -9,16 +9,20 @@ import { TotalInformations } from "../../TotalFinishInformations"
 
 export const FinishingUp = () => {
   const [isLoading, setIsLoading] = useState(false)
-  const { nextStep, prevStep, formData, setFormData, step } = useContext(
+  const { nextStep, prevStep, formData, step } = useContext(
     FormContext
   ) as FormContextType
+
+  function handleFinishUp() {
+    // TODO: Create function
+  }
 
   if (step === 4)
     return (
       <div className="flex h-[600px] items-center justify-center w-[900px] bg-white p-4 rounded-xl">
         <LayoutStepForm>
           <form
-            // onSubmit={handleSubmit(handleSelectOns)}
+            onSubmit={handleFinishUp}
             className="flex flex-col w-full pr-16 h-5/6"
           >
             <TitleDescription
@@ -30,7 +34,13 @@ export const FinishingUp = () => {
                 <div className="p-4 rounded-md bg-alabaster">
                   <PlanInformations />
                   <hr className="w-full" />
-                  <OnsInformations />
+                  {formData.addOns.map((add) => (
+                    <OnsInformations
+                      key={add.nameOns}
+                      name={add.nameOns}
+                      priceDescription={add.priceDescription.toString()}
+                    />
+                  ))}
                 </div>
                 <TotalInformations />
               </main>

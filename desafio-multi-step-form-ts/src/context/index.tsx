@@ -9,8 +9,8 @@ type Plan = {
 
 export type addOns = {
   nameOns: string
-  priceDescription: string | number
-  finalPrice: string | number
+  priceDescription: string
+  finalPrice: number
 }
 
 interface FormData {
