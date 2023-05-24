@@ -30,10 +30,7 @@ const steps: StepProps[] = [
 
 const LayoutStepForm = ({ children }: LayoutStepFormProps) => {
   return (
-    <div
-      style={{ display: "grid", gridTemplateColumns: "auto 1fr" }}
-      className="items-center w-full h-full gap-10"
-    >
+    <div className="grid items-center w-full h-full gap-10 grid-cols-gridAuto1fr">
       <div className="h-full p-8 bg-no-repeat bg-cover bg-aside w-72 rounded-xl">
         <ul className="flex flex-col gap-4">
           {steps &&

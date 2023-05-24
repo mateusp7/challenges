@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        gridAuto1fr: "auto 1fr",
+      },
       colors: {
         marineBlue: "#02295A",
         purplistBlue: "#473DFF",
