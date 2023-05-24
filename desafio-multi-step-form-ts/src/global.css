@@ -1,0 +1,14 @@
+.animationToRight {
+  animation: toRight 300ms ease-in-out;
+}
+
+@keyframes toRight {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(px, 0, 0);
+  }
+}

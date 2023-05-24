@@ -79,7 +79,7 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
   }
 
   const nextStep = () => {
-    if (step < 5) {
+    if (step < 6) {
       setStep((oldStep) => {
         const nextStepValue = oldStep + 1
         localStorage.setItem("currentStep", nextStepValue.toString())

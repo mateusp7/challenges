@@ -84,7 +84,7 @@ export const Addons = () => {
         <LayoutStepForm>
           <form
             onSubmit={handleSubmit(handleSelectOns)}
-            className="flex flex-col w-full pr-16 h-5/6"
+            className="flex flex-col w-full pr-16 h-5/6 animationToRight"
           >
             <TitleDescription
               title="Pick add-ons"

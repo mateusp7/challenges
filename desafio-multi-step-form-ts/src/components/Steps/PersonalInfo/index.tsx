@@ -58,7 +58,7 @@ export const PersonalInfo = () => {
     return (
       <div className="flex h-[600px] items-center justify-center w-[900px] bg-white p-4 rounded-xl">
         <LayoutStepForm>
-          <div className="flex flex-col w-full pr-16 ">
+          <div className="flex flex-col w-full pr-16 animationToRight">
             <TitleDescription
               title="Personal Info"
               description="Please provide your name, email address, and phone number."

@@ -84,7 +84,7 @@ const YourPlan = () => {
         <LayoutStepForm>
           <form
             onSubmit={handleSubmit(handleSelectPlan)}
-            className="flex flex-col w-full pr-16 h-5/6"
+            className="flex flex-col w-full pr-16 h-5/6 animationToRight"
           >
             <TitleDescription
               title="Select Your Plan"
