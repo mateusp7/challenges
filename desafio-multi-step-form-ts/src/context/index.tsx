@@ -72,6 +72,7 @@ export const FormProvider: React.FC<Props> = ({ children }) => {
   }
 
   const backToSpecificStep = (step: number) => {
+    console.log("clicou")
     setStep(() => {
       localStorage.setItem("currentStep", step.toString())
       return step

@@ -80,18 +80,18 @@ const YourPlan = () => {
 
   if (step == 2)
     return (
-      <div className="flex h-[600px] items-center justify-center w-[900px] bg-white p-4 rounded-xl">
+      <div className="flex h-full md:h-[600px] items-center justify-center w-[900px] md:bg-white p-4 md:rounded-xl bg-magnolia">
         <LayoutStepForm>
           <form
             onSubmit={handleSubmit(handleSelectPlan)}
-            className="flex flex-col w-full pr-16 h-5/6 animationToRight"
+            className="flex flex-col w-full p-8 bg-white rounded-lg md:p-0 md:pr-16 animationToRight"
           >
             <TitleDescription
               title="Select Your Plan"
               description="You have the option of monthly or yearly billing."
             />
             <div className="mt-6">
-              <main className="flex flex-row justify-between gap-4">
+              <main className="flex flex-col justify-between md:gap-4 md:flex-row">
                 <Controller
                   control={control}
                   name="planName"

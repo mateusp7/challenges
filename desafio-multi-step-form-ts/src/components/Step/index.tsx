@@ -29,8 +29,12 @@ export const StepItem = ({ step, subTitle, title }: StepProps) => {
         </p>
       </div>
       <div className="flex flex-col">
-        <h3 className="text-xs uppercase text-lightBlue">{title}</h3>
-        <h2 className="font-semibold text-white uppercase">{subTitle}</h2>
+        <h3 className="hidden text-xs uppercase text-lightBlue md:flex">
+          {title}
+        </h3>
+        <h2 className="hidden font-semibold text-white uppercase md:flex">
+          {subTitle}
+        </h2>
       </div>
     </li>
   )

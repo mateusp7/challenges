@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage: {
         aside: "url('/src/assets/bg-sidebar-desktop.svg')",
+        bgMobile: "url('/src/assets/bg-sidebar-mobile.svg')",
         checked: "url('/src/assets/icon-check.svg')",
       },
     },
